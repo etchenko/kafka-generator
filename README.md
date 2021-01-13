@@ -20,7 +20,6 @@ python download_model.py 345M
 You can use the requirements.txt file in order to make sure that you have all the correct packages installed on your machine before use:
 ```
 pip install -r requirements.txt
-
 ```
 
 ### Tensorflow
@@ -32,7 +31,7 @@ pip install tensorflow-gpu==1.15.0
 pip install 'tensorflow-estimator<1.15.0rc0,>1.14.0rc0' --force-reinstall
 ```
 
-### Cude
+### Cuda
 
 Finally, this model requires the use of cuda in order to function. If you do not already have Cude installed, you can run the following commands:
 
