@@ -11,30 +11,39 @@ You can find some samples of 'Kafkaesque' text that I have generated in the samp
 
 In order to train the model on sample data, you need to download the actual GPT-2 model. This can be done with the following command:
 
-''' python download_model.py 345M '''
+```
+python download_model.py 345M
+```
 
 ### Requirements
 
 You can use the requirements.txt file in order to make sure that you have all the correct packages installed on your machine before use:
-''' pip install -r requirements.txt '''
+```
+pip install -r requirements.txt
+
+```
 
 ### Tensorflow
 
 Because this instantiation of the model was created using tensorflow 1.15.0, you need to install the correct version of tensorflow, otherwise the program will malfunction:
 
-''' pip install tensorflow-gpu==1.15.0
-    pip install 'tensorflow-estimator<1.15.0rc0,>1.14.0rc0' --force-reinstall '''
+```
+pip install tensorflow-gpu==1.15.0
+pip install 'tensorflow-estimator<1.15.0rc0,>1.14.0rc0' --force-reinstall
+```
 
 ### Cude
 
 Finally, this model requires the use of cuda in order to function. If you do not already have Cude installed, you can run the following commands:
 
-'''wget https://developer.nvidia.com/compute/cuda/9.0/Prod/local_installers/cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64-deb
+```
+wget https://developer.nvidia.com/compute/cuda/9.0/Prod/local_installers/cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64-deb
 dpkg -i cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64-deb
 apt-key add /var/cuda-repo-*/7fa2af80.pub
 apt-get update
 apt-get install cuda-9-0
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-9.0/lib64/ '''
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-9.0/lib64/
+```
 
 ## Usage
 
@@ -42,13 +51,15 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-9.0/lib64/ '''
 
 In order to run this model, you can run the following command:
 
-'''PYTHONPATH=src ./train.py --dataset src/all.txt --model_name '345M' '''
+```
+PYTHONPATH=src ./train.py --dataset src/all.txt --model_name '345M'
+```
 
 > :warning: This is program is very computationally intensive, and is recommended that it be ran using a GPU, otherwise training for multiple generations may take a very long time
 
 ### Getting Samples
 
-To generate samples from the trained model, you can use the 'conditional_model' method in order to generate texts based on a seed sentence. 
+To generate samples from the trained model, you can use the 'conditional_model' method in order to generate texts based on a seed sentence.
 
 # gpt-2
 
